@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="global.css" />
     <link href="../output.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
     <script src="barChart.js" defer></script>
     <script src="doughnutChart.js" defer></script>
   </head>
   <body class="flex flex-col lg:flex-row">
+    <!-- botao voltar ao Topo -->
     <div
       class="fixed z-10 top-1 left-1/2 -translate-x-1/2 m-auto bg-sky-600 rounded-full p-1 w-10 h-10 text-center items-center justify-center hidden text-white hover:cursor-pointer hover:opacity-90 border"
       id="voltarTopo"
@@ -118,7 +120,10 @@
       <div class="bg-gray-900 text-white rounded p-2 flex">
         <h1>Usuários:</h1>
       </div>
-      <table class="bg-blue-950 rounded text-white w-full mt-4 p-5">
+      <table
+        class="bg-blue-950 rounded text-white w-full mt-2 p-5 text-center"
+        id="tabelaUsuarios"
+      >
         <thead>
           <tr>
             <th>Nome</th>
@@ -127,16 +132,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Alfreds Futterkiste</td>
-            <td>Maria Anders</td>
-            <td>Germany</td>
-          </tr>
-          <tr>
-            <td>Centro comercial Moctezuma</td>
-            <td>Francisco Chang</td>
-            <td>Mexico</td>
-          </tr>
+          <!-- Utilizando Api de usuários aleatórios -->
         </tbody>
       </table>
     </section>
