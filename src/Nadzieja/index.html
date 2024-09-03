@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js" defer></script>
     <script src="barChart.js" defer></script>
+    <script src="chart3.js" defer></script>
     <script src="doughnutChart.js" defer></script>
   </head>
   <body class="flex flex-col lg:flex-row">
@@ -103,12 +104,22 @@
         id="secaoGraficos"
         class="w-full flex flex-row lg:flex-row flex-wrap justify-around gap-4"
       >
-        <div class="bg-blue-950 rounded text-white p-1 w-full lg:w-1/3 h-fit">
-          <h1>Número de Sessões P/Dia</h1>
-          <div class="bg-sky-700 rounded">
-            <canvas id="barChart" class=""></canvas>
+        <section
+          class="lg:w-1/3 sm:w-full md:flex md:flex-col justify-around gap-2"
+        >
+          <div class="bg-blue-950 rounded text-white p-1 w-full h-fit">
+            <h1>Número de Sessões P/Dia</h1>
+            <div class="bg-sky-700 rounded">
+              <canvas id="barChart" class=""></canvas>
+            </div>
           </div>
-        </div>
+          <div class="bg-blue-950 rounded text-white p-1 w-full h-fit">
+            <h1>Número de Sessões P/Dia</h1>
+            <div class="bg-sky-700 rounded">
+              <canvas id="barChart3" class=""></canvas>
+            </div>
+          </div>
+        </section>
         <div class="bg-blue-950 rounded text-white p-1 w-full lg:w-1/2">
           <h1>Número de Sessões P/Dia</h1>
           <div class="bg-sky-700 rounded">
