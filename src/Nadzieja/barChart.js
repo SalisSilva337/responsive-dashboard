@@ -21,9 +21,27 @@ let barChart = new Chart(ctx, {
     ],
   },
   options: {
+    plugins: {
+      legend: {
+        labels: {
+          color: "white",
+          font: {
+            size: 15,
+          },
+        },
+      },
+    },
     scales: {
       y: {
         beginAtZero: true,
+        ticks: {
+          color: "white",
+        },
+      },
+      x: {
+        ticks: {
+          color: "white",
+        },
       },
     },
   },

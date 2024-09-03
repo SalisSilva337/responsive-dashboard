@@ -4,21 +4,41 @@ let doughChart = new Chart(ctx2, {
   type: "polarArea",
   data: {
     labels: [
-      "Segunda",
-      "Terça",
-      "Quarta",
-      "Quinta",
-      "Sexta",
-      "Sábado",
-      "Domingo",
+      "Dias de Correção de Bugs",
+      "Dias de Otimização da Dashboard",
+      "Dias de Manutenção do Servidor",
     ],
     datasets: [
       {
-        label: "Indicadores de Desempenho",
-        data: [12, 45, 3, 5, 2, 3, 10],
+        label: "Nº de Dias de Manutenção do NADZIEJA",
+        data: [15, 30, 19],
         borderWidth: 1,
+        color: "white",
       },
     ],
   },
-  options: {},
+  options: {
+    plugins: {
+      legend: {
+        labels: {
+          color: "white",
+          font: {
+            size: 15,
+          },
+        },
+      },
+    },
+    scales: {
+      y: {
+        ticks: {
+          color: "white",
+        },
+      },
+      x: {
+        ticks: {
+          color: "white",
+        },
+      },
+    },
+  },
 });

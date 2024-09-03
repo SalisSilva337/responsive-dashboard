@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NADZIEJA</title>
-    <link rel="stylesheet" href="global.css" />
     <link href="../output.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js" defer></script>
@@ -128,13 +127,13 @@
           </div>
         </section>
         <div class="bg-blue-950 rounded text-white p-1 w-full lg:w-1/2">
-          <h1>Número de Sessões P/Dia</h1>
+          <h1>Nº de Dias de Manutenção da Dashboard</h1>
           <div class="bg-sky-700 rounded">
             <canvas id="doughChart"></canvas>
           </div>
         </div>
       </section>
-
+      <!-- Seção Usuários -->
       <div class="bg-gray-900 text-white rounded p-2 flex">
         <h1>Usuários:</h1>
       </div>
@@ -181,6 +180,18 @@
           <!-- Utilizando Api de usuários aleatórios -->
         </tbody>
       </table>
+      <!-- Seção Sessões -->
+      <div class="bg-gray-900 text-white rounded p-2 flex">
+        <h1>Sessões Atuais:</h1>
+      </div>
+      <div
+        class="flex flex-col w-full h-64 bg-blue-950 overflow-auto p-1 rounded"
+        id="controleSessoes"
+      ></div>
+
+      <div class="bg-gray-900 text-white rounded p-2 flex">
+        <h1>Desempenho:</h1>
+      </div>
     </section>
   </body>
 </html>

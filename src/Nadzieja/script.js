@@ -18,6 +18,8 @@ let inputPesquisa = document.getElementById("inputPesquisa");
 let iconePesquisa = document.getElementById("iconePesquisa");
 let iconeDica = document.getElementById("iconeDica");
 let dica = document.getElementById("dica");
+let controleSessoes = document.getElementById("controleSessoes");
+let contador = 0;
 window.onload = buscarDadosApi();
 
 function buscarDadosApi() {
@@ -51,6 +53,14 @@ function buscarDadosApi() {
         tr.appendChild(tdData);
         tabelaUsuarios.append(tr);
         tr.style.transition = "0.5s all";
+
+        // let cadaSessao = document.createElement("div");
+        // cadaSessao.textContent =
+        //   urlArray.name.first + " " + urlArray.name.last + " ingressou";
+        // setInterval(() => {
+        //   controleSessoes.appendChild(cadaSessao);
+        // }, 1000);
+
         inputPesquisa.addEventListener("input", () => {
           if (
             inputPesquisa.value == tdUsuarios.textContent ||
@@ -62,6 +72,30 @@ function buscarDadosApi() {
           }
         });
       }
+      let contador = 0;
+
+      const interval = setInterval(() => {
+        if (contador >= data.results.length) {
+          clearInterval(interval);
+        }
+        let urlArray = data.results[contador];
+        let cadaSessao = document.createElement("div");
+        cadaSessao.style.fontFamily = "Verdana, Geneva, Tahoma, sans-serif";
+        cadaSessao.style.fontSize = "20";
+        if (contador % 2 == 0) {
+          cadaSessao.style.color = "green";
+          cadaSessao.textContent =
+            urlArray.name.first + " " + urlArray.name.last + " ingressou...";
+        } else {
+          cadaSessao.style.color = "red";
+          cadaSessao.textContent =
+            urlArray.name.first + " " + urlArray.name.last + " desconectou...";
+        }
+
+        controleSessoes.appendChild(cadaSessao);
+
+        contador++;
+      }, 1500);
     })
     .catch((err) => console.error(err));
 
