@@ -13,9 +13,30 @@ body {
   background-color: #0284c7;
   font-family: monospace;
 }
+
 #imgVisaoGeral {
   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg)
     brightness(102%) contrast(102%);
+}
+
+#iconeEditar {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg)
+    brightness(102%) contrast(102%);
+}
+
+#iconeEditar:hover {
+  filter: invert(36%) sepia(91%) saturate(688%) hue-rotate(163deg)
+    brightness(98%) contrast(106%);
+}
+
+#iconeDica:hover {
+  filter: invert(100%) sepia(5%) saturate(7480%) hue-rotate(193deg)
+    brightness(122%) contrast(104%);
+}
+
+#iconePesquisa {
+  filter: invert(12%) sepia(52%) saturate(2150%) hue-rotate(209deg)
+    brightness(90%) contrast(96%);
 }
 
 #voltarTopo {
@@ -23,4 +44,8 @@ body {
 }
 #card {
   box-shadow: 0px 0px 5px black;
+}
+
+.show {
+  display: flex;
 }

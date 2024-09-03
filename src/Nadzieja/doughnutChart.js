@@ -1,7 +1,7 @@
 let ctx2 = document.getElementById("doughChart");
 
 let doughChart = new Chart(ctx2, {
-  type: "doughnut",
+  type: "polarArea",
   data: {
     labels: [
       "Segunda",
@@ -14,7 +14,7 @@ let doughChart = new Chart(ctx2, {
     ],
     datasets: [
       {
-        label: "Nº de sessões",
+        label: "Indicadores de Desempenho",
         data: [12, 45, 3, 5, 2, 3, 10],
         borderWidth: 1,
       },

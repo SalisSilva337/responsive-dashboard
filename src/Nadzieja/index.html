@@ -15,7 +15,7 @@
   <body class="flex flex-col lg:flex-row">
     <!-- botao voltar ao Topo -->
     <div
-      class="fixed z-10 top-1 left-1/2 -translate-x-1/2 m-auto bg-sky-600 rounded-full p-1 w-10 h-10 text-center items-center justify-center hidden text-white hover:cursor-pointer hover:opacity-90 border transition-all"
+      class="fixed z-10 right-3 bottom-1 m-auto bg-sky-600 rounded-full p-1 w-10 h-10 text-center items-center justify-center hidden text-white hover:cursor-pointer hover:opacity-90 border animate-bounce text-xl"
       id="voltarTopo"
     >
       <h1>⬆</h1>
@@ -29,14 +29,20 @@
         <div class="flex flex-col items-center gap-2 justify-center">
           <h1 class="text-2xl">NADZIEJA</h1>
           <!-- Perfil -->
-          <div class="flex flex-col gap-1">
+          <div class="flex flex-col gap-1 relative">
             <img
-              src="../imgs/justinbieber.jpg"
+              src="../imgs/mdi--user.png"
               alt=""
               class="rounded-full h-28 w-28 border"
             />
-            <div class="justify-center flex items-center text-center">
-              <h1>Black Bieber</h1>
+            <div class="justify-center flex items-center text-center flex-col">
+              <h1>User</h1>
+              <img
+                src="../imgs/typcn--edit.png"
+                id="iconeEditar"
+                class="hover:cursor-pointer"
+                alt=""
+              />
             </div>
           </div>
         </div>
@@ -68,7 +74,7 @@
             id="card"
           >
             <div>
-              <h1 class="text-lg">2.000 ativos</h1>
+              <h1 class="text-lg">50.000 ativos</h1>
               <h1 class="text-sm font-bold">Usuários P/Mês</h1>
             </div>
           </div>
@@ -80,7 +86,7 @@
             id="card"
           >
             <div>
-              <h1 class="text-lg">400 sessões</h1>
+              <h1 class="text-lg">1.200 sessões</h1>
               <h1 class="text-sm font-bold">Sessões P/Dia</h1>
             </div>
           </div>
@@ -115,7 +121,7 @@
             </div>
           </div>
           <div class="bg-blue-950 rounded text-white p-1 w-full h-fit">
-            <h1>Número de Sessões P/Dia</h1>
+            <h1>Número de Usuários Ativos P/Mês</h1>
             <div class="bg-sky-700 rounded">
               <canvas id="barChart3" class=""></canvas>
             </div>
@@ -131,6 +137,34 @@
 
       <div class="bg-gray-900 text-white rounded p-2 flex">
         <h1>Usuários:</h1>
+      </div>
+      <div class="flex gap-1">
+        <img
+          src="../imgs/line-md--search.png"
+          id="iconePesquisa"
+          class="h-8"
+          alt=""
+        />
+        <input
+          type="text"
+          id="inputPesquisa"
+          class="rounded p-1 bg-blue-950 placeholder:text-sky-700 hover:placeholder:text-white transition-all text-white h-8"
+          placeholder="Pesquise Aqui..."
+        />
+        <div class="flex">
+          <img
+            src="../imgs/ph--question-fill.png"
+            id="iconeDica"
+            class="transition-all hover:cursor-pointer animate-pulse h-8"
+            alt=""
+          />
+          <div
+            class="bg-blue-950 rounded text-white p-1 opacity-65 hidden"
+            id="dica"
+          >
+            <h2>a pesquisa pode ser feita pelo nome ou email</h2>
+          </div>
+        </div>
       </div>
       <table
         class="bg-blue-950 rounded text-white w-full mt-2 p-5 text-center"

@@ -14,6 +14,10 @@ window.addEventListener("scroll", (event) => {
 });
 
 let tabelaUsuarios = document.getElementById("tabelaUsuarios");
+let inputPesquisa = document.getElementById("inputPesquisa");
+let iconePesquisa = document.getElementById("iconePesquisa");
+let iconeDica = document.getElementById("iconeDica");
+let dica = document.getElementById("dica");
 window.onload = buscarDadosApi();
 
 function buscarDadosApi() {
@@ -21,8 +25,6 @@ function buscarDadosApi() {
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NGZmNWNjMGU0NDhkZDI0ODA2MTRkYjEwNTIyMjcyMCIsIm5iZiI6MTcyMzgyNTIyMy42NDQ2ODMsInN1YiI6IjY2Mzk1ZGQxNDcwZWFkMDEyYTEzOTdhNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.hsqu3PPTDgnUa1K9LHgpqKVeH0P475EbPrAlWZkzrBw",
     },
   };
 
@@ -48,7 +50,22 @@ function buscarDadosApi() {
         tdData.textContent = dataRegistro;
         tr.appendChild(tdData);
         tabelaUsuarios.append(tr);
+        tr.style.transition = "0.5s all";
+        inputPesquisa.addEventListener("input", () => {
+          if (
+            inputPesquisa.value == tdUsuarios.textContent ||
+            inputPesquisa.value + "@example.com" == tdEmail.textContent
+          ) {
+            tr.style.backgroundColor = "#111827";
+          } else {
+            tr.style.backgroundColor = "#172554";
+          }
+        });
       }
     })
     .catch((err) => console.error(err));
+
+  iconeDica.addEventListener("click", () => {
+    dica.classList.toggle("show");
+  });
 }
