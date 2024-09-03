@@ -28,3 +28,18 @@ let barChart = new Chart(ctx, {
     },
   },
 });
+
+//função para mostrar o botao de voltar ao topo
+let voltarTopo = document.getElementById("voltarTopo");
+window.addEventListener("scroll", (event) => {
+  let scroll = this.scrollY;
+
+  if (scroll >= 350) {
+    voltarTopo.style.display = "flex";
+    voltarTopo.addEventListener("click", () => {
+      window.scrollTo(0, 0);
+    });
+  } else {
+    voltarTopo.style.display = "none";
+  }
+});

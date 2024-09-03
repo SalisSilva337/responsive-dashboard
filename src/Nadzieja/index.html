@@ -11,6 +11,13 @@
     <script src="doughnutChart.js" defer></script>
   </head>
   <body class="flex flex-col lg:flex-row">
+    <div
+      class="fixed z-10 top-1 left-1/2 -translate-x-1/2 m-auto bg-sky-600 rounded-full p-1 w-10 h-10 text-center items-center justify-center hidden text-white hover:cursor-pointer hover:opacity-90 border"
+      id="voltarTopo"
+    >
+      <h1>⬆</h1>
+    </div>
+
     <!-- Barra Lateral -->
     <aside
       class="bg-blue-950 text-white flex flex-col gap-14 relative items-center p-5 lg:float-left"
@@ -44,7 +51,7 @@
 
     <!-- Seção Visão Geral -->
     <section
-      class="flex flex-col flex-wrap p-1 justify-around gap-2 overflow-auto"
+      class="flex flex-col flex-wrap p-1 justify-around gap-2 overflow-auto w-full"
       id="visaoGeral"
     >
       <div class="bg-gray-900 text-white rounded p-2">
@@ -55,6 +62,7 @@
         <div class="flex justify-center h-24 w-full lg:w-auto">
           <div
             class="bg-blue-950 text-white p-5 rounded flex w-full lg:w-56 items-center justify-center text-center"
+            id="card"
           >
             <div>
               <h1 class="text-lg">2.000 ativos</h1>
@@ -66,6 +74,7 @@
         <div class="flex justify-center h-24 w-full lg:w-auto">
           <div
             class="bg-blue-950 text-white p-5 rounded flex w-full lg:w-56 items-center justify-center text-center"
+            id="card"
           >
             <div>
               <h1 class="text-lg">400 sessões</h1>
@@ -77,6 +86,7 @@
         <div class="flex justify-center h-24 w-full lg:w-auto">
           <div
             class="bg-blue-950 text-white p-5 rounded flex w-full lg:w-56 items-center justify-center text-center"
+            id="card"
           >
             <div>
               <h1 class="text-lg">400 sessões</h1>
@@ -89,7 +99,7 @@
       <!-- Seção Gráficos -->
       <section
         id="secaoGraficos"
-        class="w-full flex flex-col lg:flex-row flex-wrap justify-around gap-4"
+        class="w-full flex flex-row lg:flex-row flex-wrap justify-around gap-4"
       >
         <div class="bg-blue-950 rounded text-white p-1 w-full lg:w-1/2">
           <h1>Número de Sessões P/Dia</h1>
@@ -103,29 +113,32 @@
             <canvas id="doughChart"></canvas>
           </div>
         </div>
-
-        <table class="bg-blue-950 rounded text-white w-full mt-4">
-          <thead>
-            <tr>
-              <th>Nome</th>
-              <th>E-mail</th>
-              <th>Data de Reg.</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Alfreds Futterkiste</td>
-              <td>Maria Anders</td>
-              <td>Germany</td>
-            </tr>
-            <tr>
-              <td>Centro comercial Moctezuma</td>
-              <td>Francisco Chang</td>
-              <td>Mexico</td>
-            </tr>
-          </tbody>
-        </table>
       </section>
+
+      <div class="bg-gray-900 text-white rounded p-2 flex">
+        <h1>Usuários:</h1>
+      </div>
+      <table class="bg-blue-950 rounded text-white w-full mt-4 p-5">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Data de Reg.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>Maria Anders</td>
+            <td>Germany</td>
+          </tr>
+          <tr>
+            <td>Centro comercial Moctezuma</td>
+            <td>Francisco Chang</td>
+            <td>Mexico</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
   </body>
 </html>
