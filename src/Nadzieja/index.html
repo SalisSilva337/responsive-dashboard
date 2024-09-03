@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NADZIEJA</title>
+    <link rel="stylesheet" href="global.css" />
+    <link href="../output.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="barChart.js" defer></script>
+    <script src="doughnutChart.js" defer></script>
+  </head>
+  <body class="flex flex-col lg:flex-row">
+    <!-- Barra Lateral -->
+    <aside
+      class="bg-blue-950 text-white flex flex-col gap-14 relative items-center p-5 lg:float-left"
+    >
+      <div class="flex flex-col h-full sticky top-0 left-0">
+        <div class="flex flex-col items-center gap-2 justify-center">
+          <h1 class="text-2xl">NADZIEJA</h1>
+          <!-- Perfil -->
+          <div class="flex flex-col gap-1">
+            <img
+              src="../imgs/justinbieber.jpg"
+              alt=""
+              class="rounded-full h-28 w-28 border"
+            />
+            <div class="justify-center flex items-center text-center">
+              <h1>Black Bieber</h1>
+            </div>
+          </div>
+        </div>
+
+        <!-- navLateral -->
+        <div class="flex flex-col items-center mt-5">
+          <h1>IR PARA:</h1>
+          <a href="" class="hover:text-sky-600">Visão Geral</a>
+          <a href="" class="hover:text-sky-600">Usuários</a>
+          <a href="" class="hover:text-sky-600">Sessões</a>
+          <a href="" class="hover:text-sky-600">Desempenho</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Seção Visão Geral -->
+    <section
+      class="flex flex-col flex-wrap p-1 justify-around gap-2 overflow-auto"
+      id="visaoGeral"
+    >
+      <div class="bg-gray-900 text-white rounded p-2">
+        <h1>Visao Geral:</h1>
+      </div>
+
+      <section class="flex flex-wrap justify-around gap-2">
+        <div class="flex justify-center h-24 w-full lg:w-auto">
+          <div
+            class="bg-blue-950 text-white p-5 rounded flex w-full lg:w-56 items-center justify-center text-center"
+          >
+            <div>
+              <h1 class="text-lg">2.000 ativos</h1>
+              <h1 class="text-sm">Usuários P/Semana</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-center h-24 w-full lg:w-auto">
+          <div
+            class="bg-blue-950 text-white p-5 rounded flex w-full lg:w-56 items-center justify-center text-center"
+          >
+            <div>
+              <h1 class="text-lg">400 sessões</h1>
+              <h1 class="text-sm">Sessões P/Dia</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-center h-24 w-full lg:w-auto">
+          <div
+            class="bg-blue-950 text-white p-5 rounded flex w-full lg:w-56 items-center justify-center text-center"
+          >
+            <div>
+              <h1 class="text-lg">400 sessões</h1>
+              <h1 class="text-sm">Sessões P/Dia</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção Gráficos -->
+      <section
+        id="secaoGraficos"
+        class="w-full flex flex-col lg:flex-row flex-wrap justify-around gap-4"
+      >
+        <div class="bg-blue-950 rounded text-white p-1 w-full lg:w-1/2">
+          <h1>Número de Sessões P/Dia</h1>
+          <div class="bg-sky-700 rounded">
+            <canvas id="barChart"></canvas>
+          </div>
+        </div>
+        <div class="bg-blue-950 rounded text-white p-1 w-full lg:w-1/2">
+          <h1>Número de Sessões P/Dia</h1>
+          <div class="bg-sky-700 rounded">
+            <canvas id="doughChart"></canvas>
+          </div>
+        </div>
+
+        <table class="bg-blue-950 rounded text-white w-full mt-4">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>E-mail</th>
+              <th>Data de Reg.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Alfreds Futterkiste</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+            </tr>
+            <tr>
+              <td>Centro comercial Moctezuma</td>
+              <td>Francisco Chang</td>
+              <td>Mexico</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+  </body>
+</html>
