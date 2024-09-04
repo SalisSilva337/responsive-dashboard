@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NADZIEJA</title>
-    <link href="../output.css" rel="stylesheet" />
+    <link href="./styles/output.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js" defer></script>
-    <script src="barChart.js" defer></script>
-    <script src="chart3.js" defer></script>
-    <script src="doughnutChart.js" defer></script>
+    <script src="scripts/script.js" defer></script>
+    <script src="scripts/barChart.js" defer></script>
+    <script src="scripts/chart3.js" defer></script>
+    <script src="scripts/doughnutChart.js" defer></script>
   </head>
   <body class="flex flex-col lg:flex-row">
     <!-- botao voltar ao Topo -->
@@ -65,8 +65,11 @@
       <div class="bg-gray-900 text-white rounded p-2">
         <h1>Visao Geral:</h1>
       </div>
-
-      <section class="flex flex-wrap justify-around gap-2">
+      <!-- Seção Cards -->
+      <section
+        class="flex flex-wrap justify-around gap-2 p-2 rounded"
+        id="secaoCards"
+      >
         <div class="flex justify-center h-24 w-full lg:w-auto">
           <div
             class="bg-blue-950 text-white p-5 rounded flex w-full lg:w-56 items-center justify-center text-center"
@@ -97,7 +100,19 @@
             id="card"
           >
             <div>
-              <h1 class="text-lg">400 sessões</h1>
+              <h1 class="text-lg">1.200 sessões</h1>
+              <h1 class="text-sm font-bold">Sessões P/Dia</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-center h-24 w-full lg:w-auto">
+          <div
+            class="bg-blue-950 text-white p-5 rounded flex w-full lg:w-56 items-center justify-center text-center"
+            id="card"
+          >
+            <div>
+              <h1 class="text-lg">100 sessões</h1>
               <h1 class="text-sm font-bold">Sessões P/Dia</h1>
             </div>
           </div>
@@ -107,12 +122,10 @@
       <!-- Seção Gráficos -->
       <section
         id="secaoGraficos"
-        class="w-full flex flex-row lg:flex-row flex-wrap justify-around gap-4"
+        class="w-full flex flex-row lg:flex-row flex-wrap justify-around gap-4 shadow-xl p-2 rounded"
       >
         <!-- subDivisao nos dois graficos de barras -->
-        <section
-          class="lg:w-1/3 sm:w-full md:flex md:flex-col justify-around gap-2"
-        >
+        <section class="lg:w-1/3 w-full flex flex-col justify-around gap-2">
           <div class="bg-blue-950 rounded text-white p-1 w-full h-fit">
             <h1>Número de Sessões P/Dia</h1>
             <div class="bg-sky-700 rounded">
@@ -126,7 +139,9 @@
             </div>
           </div>
         </section>
-        <div class="bg-blue-950 rounded text-white p-1 w-full lg:w-1/2">
+        <div
+          class="bg-blue-950 rounded text-white p-1 w-full lg:w-1/3 border h-fit lg:mt-5"
+        >
           <h1>Nº de Dias de Manutenção da Dashboard</h1>
           <div class="bg-sky-700 rounded">
             <canvas id="doughChart"></canvas>
@@ -137,49 +152,52 @@
       <div class="bg-gray-900 text-white rounded p-2 flex">
         <h1>Usuários:</h1>
       </div>
-      <div class="flex gap-1">
-        <img
-          src="../imgs/line-md--search.png"
-          id="iconePesquisa"
-          class="h-8"
-          alt=""
-        />
-        <input
-          type="text"
-          id="inputPesquisa"
-          class="rounded p-1 bg-blue-950 placeholder:text-sky-700 hover:placeholder:text-white transition-all text-white h-8"
-          placeholder="Pesquise Aqui..."
-        />
-        <div class="flex">
+      <section class="flex gap-1 flex-col p-2 rounded" id="secaoUsuarios">
+        <div class="flex gap-1">
           <img
-            src="../imgs/ph--question-fill.png"
-            id="iconeDica"
-            class="transition-all hover:cursor-pointer animate-pulse h-8"
+            src="../imgs/line-md--search.png"
+            id="iconePesquisa"
+            class="h-8"
             alt=""
           />
-          <div
-            class="bg-blue-950 rounded text-white p-1 opacity-65 hidden"
-            id="dica"
-          >
-            <h2>a pesquisa pode ser feita pelo nome ou email</h2>
+          <input
+            type="text"
+            id="inputPesquisa"
+            class="rounded p-1 bg-blue-950 placeholder:text-sky-700 hover:placeholder:text-white transition-all text-white h-8"
+            placeholder="Pesquise Aqui..."
+          />
+          <div class="flex">
+            <img
+              src="../imgs/ph--question-fill.png"
+              id="iconeDica"
+              class="transition-all hover:cursor-pointer animate-pulse h-8"
+              alt=""
+            />
+            <div
+              class="bg-blue-950 rounded text-white p-1 opacity-65 hidden"
+              id="dica"
+            >
+              <h2>a pesquisa pode ser feita pelo nome ou email</h2>
+            </div>
           </div>
         </div>
-      </div>
-      <table
-        class="bg-blue-950 rounded text-white w-full mt-2 p-5 text-center"
-        id="tabelaUsuarios"
-      >
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>E-mail</th>
-            <th>Data de Reg.</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Utilizando Api de usuários aleatórios -->
-        </tbody>
-      </table>
+
+        <table
+          class="bg-blue-950 rounded text-white w-full mt-2 p-5 text-center transition-all"
+          id="tabelaUsuarios"
+        >
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>E-mail</th>
+              <th>Data de Reg.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Utilizando Api de usuários aleatórios -->
+          </tbody>
+        </table>
+      </section>
       <!-- Seção Sessões -->
       <div class="bg-gray-900 text-white rounded p-2 flex">
         <h1>Sessões Atuais:</h1>
@@ -189,9 +207,44 @@
         id="controleSessoes"
       ></div>
 
+      <!-- Seção Desempenho -->
       <div class="bg-gray-900 text-white rounded p-2 flex">
         <h1>Desempenho:</h1>
       </div>
+      <section class="flex justify-around flex-wrap gap-2">
+        <div class="circulo" id="circulo1">
+          <div class="porcentagem" id="porcentagem1">
+            <div id="porcentagemConteudo">
+              <h1 class="spanPorcentagem" id="spanPorcentagem1">20ms</h1>
+              <h2 class="spanPorcentagemConteudo" id="spanPorcentagemConteudo1">
+                tempo médio de resposta
+              </h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="circulo" id="circulo2">
+          <div class="porcentagem" id="porcentagem2">
+            <div id="porcentagemConteudo">
+              <h1 class="spanPorcentagem" id="spanPorcentagem2">5%</h1>
+              <h2 class="spanPorcentagemConteudo" id="spanPorcentagemConteudo2">
+                Taxa de Erro
+              </h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="circulo" id="circulo3">
+          <div class="porcentagem" id="porcentagem3">
+            <div id="porcentagemConteudo">
+              <h1 class="spanPorcentagem" id="spanPorcentagem3">0%</h1>
+              <h2 class="spanPorcentagemConteudo" id="spanPorcentagemConteudo1">
+                Nº Usuários Ativos
+              </h2>
+            </div>
+          </div>
+        </div>
+      </section>
     </section>
   </body>
 </html>

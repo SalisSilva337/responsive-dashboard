@@ -54,13 +54,6 @@ function buscarDadosApi() {
         tabelaUsuarios.append(tr);
         tr.style.transition = "0.5s all";
 
-        // let cadaSessao = document.createElement("div");
-        // cadaSessao.textContent =
-        //   urlArray.name.first + " " + urlArray.name.last + " ingressou";
-        // setInterval(() => {
-        //   controleSessoes.appendChild(cadaSessao);
-        // }, 1000);
-
         inputPesquisa.addEventListener("input", () => {
           if (
             inputPesquisa.value == tdUsuarios.textContent ||
@@ -72,9 +65,9 @@ function buscarDadosApi() {
           }
         });
       }
-      let contador = 0;
 
       const interval = setInterval(() => {
+        let contador = Math.floor(Math.random() * data.results.length);
         if (contador >= data.results.length) {
           clearInterval(interval);
         }
@@ -82,6 +75,7 @@ function buscarDadosApi() {
         let cadaSessao = document.createElement("div");
         cadaSessao.style.fontFamily = "Verdana, Geneva, Tahoma, sans-serif";
         cadaSessao.style.fontSize = "20";
+
         if (contador % 2 == 0) {
           cadaSessao.style.color = "green";
           cadaSessao.textContent =
@@ -93,8 +87,7 @@ function buscarDadosApi() {
         }
 
         controleSessoes.appendChild(cadaSessao);
-
-        contador++;
+        console.log(contador);
       }, 1500);
     })
     .catch((err) => console.error(err));

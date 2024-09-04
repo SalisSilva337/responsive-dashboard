@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: rgb(31, 58, 149);
+  background: linear-gradient(
+    0deg,
+    rgba(31, 58, 149, 1) 20%,
+    rgba(2, 132, 199, 1) 100%
+  );
+  font-family: monospace;
+}
+
+#secaoCards {
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.4);
+}
+
+#secaoGraficos {
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.4);
+}
+#secaoUsuarios {
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.4);
+}
+#imgVisaoGeral {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg)
+    brightness(102%) contrast(102%);
+}
+
+#iconeEditar {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg)
+    brightness(102%) contrast(102%);
+}
+
+#iconeEditar:hover {
+  filter: invert(36%) sepia(91%) saturate(688%) hue-rotate(163deg)
+    brightness(98%) contrast(106%);
+}
+
+#iconeDica:hover {
+  filter: invert(100%) sepia(5%) saturate(7480%) hue-rotate(193deg)
+    brightness(122%) contrast(104%);
+}
+
+#iconePesquisa {
+  filter: invert(12%) sepia(52%) saturate(2150%) hue-rotate(209deg)
+    brightness(90%) contrast(96%);
+}
+
+#voltarTopo {
+  box-shadow: 0px 0px 3px black;
+}
+#card {
+  box-shadow: 0px 0px 5px black;
+}
+
+.show {
+  display: flex;
+}
+
+/* Circulos Desempenho */
+.circulo {
+  display: grid;
+  padding: auto;
+  place-items: center;
+  background: conic-gradient(rgb(23, 37, 84) 200deg, rgb(17, 24, 39) 0deg);
+  height: 300px;
+  width: 300px;
+  border-radius: 100%;
+}
+#circulo1 {
+  background: conic-gradient(rgb(23, 37, 84) 320deg, rgb(17, 24, 39) 0deg);
+}
+.porcentagem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 250px;
+  width: 250px;
+  border-radius: 100%;
+  background-color: #0369a1;
+  color: white;
+}
+
+.spanPorcentagem {
+  font-size: 50px;
+}
+
+#porcentagemConteudo {
+  display: block;
+  flex-wrap: wrap;
+}

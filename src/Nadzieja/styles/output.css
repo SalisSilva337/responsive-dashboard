@@ -622,8 +622,8 @@ video {
   height: 7rem;
 }
 
-.h-52 {
-  height: 13rem;
+.h-64 {
+  height: 16rem;
 }
 
 .h-8 {
@@ -637,10 +637,6 @@ video {
 
 .h-full {
   height: 100%;
-}
-
-.h-64 {
-  height: 16rem;
 }
 
 .w-10 {
@@ -806,6 +802,12 @@ video {
   opacity: 0.65;
 }
 
+.shadow-xl {
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .transition {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -830,8 +832,25 @@ html {
 }
 
 body {
-  background-color: #0284c7;
+  background: rgb(31, 58, 149);
+  background: linear-gradient(
+    0deg,
+    rgba(31, 58, 149, 1) 20%,
+    rgba(2, 132, 199, 1) 100%
+  );
   font-family: monospace;
+}
+
+#secaoCards {
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.4);
+}
+
+#secaoGraficos {
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.4);
+}
+
+#secaoUsuarios {
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.4);
 }
 
 #imgVisaoGeral {
@@ -871,6 +890,43 @@ body {
   display: flex;
 }
 
+/* Circulos Desempenho */
+
+.circulo {
+  display: grid;
+  padding: auto;
+  place-items: center;
+  background: conic-gradient(rgb(23, 37, 84) 200deg, rgb(17, 24, 39) 0deg);
+  height: 300px;
+  width: 300px;
+  border-radius: 100%;
+}
+
+#circulo1 {
+  background: conic-gradient(rgb(23, 37, 84) 320deg, rgb(17, 24, 39) 0deg);
+}
+
+.porcentagem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 250px;
+  width: 250px;
+  border-radius: 100%;
+  background-color: #0369a1;
+  color: white;
+}
+
+.spanPorcentagem {
+  font-size: 50px;
+}
+
+#porcentagemConteudo {
+  display: block;
+  flex-wrap: wrap;
+}
+
 .placeholder\:text-sky-700::-moz-placeholder {
   --tw-text-opacity: 1;
   color: rgb(3 105 161 / var(--tw-text-opacity));
@@ -904,29 +960,13 @@ body {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-@media (min-width: 640px) {
-  .sm\:w-full {
-    width: 100%;
-  }
-}
-
-@media (min-width: 768px) {
-  .md\:flex {
-    display: flex;
-  }
-
-  .md\:flex-col {
-    flex-direction: column;
-  }
-}
-
-@media (min-width: 1024px) {
+@media (min-width: 1091px) {
   .lg\:float-left {
     float: left;
   }
 
-  .lg\:w-1\/2 {
-    width: 50%;
+  .lg\:mt-5 {
+    margin-top: 1.25rem;
   }
 
   .lg\:w-1\/3 {

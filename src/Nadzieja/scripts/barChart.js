@@ -15,7 +15,7 @@ let barChart = new Chart(ctx, {
     datasets: [
       {
         label: "Nº de sessões",
-        data: [690, 470, 780, 540, 850, 1300, 1700],
+        data: [890, 670, 880, 940, 1500, 1300, 1700],
         borderWidth: 1,
       },
     ],

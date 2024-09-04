@@ -7,7 +7,7 @@ let barChart3 = new Chart(ctx3, {
     datasets: [
       {
         label: "Usuários Ativos",
-        data: [15000, 45000, 68000, 53500, 41000, 51000, 45200],
+        data: [41200, 45000, 68000, 53500, 41000, 51000, 45200],
         borderWidth: 1,
       },
     ],
