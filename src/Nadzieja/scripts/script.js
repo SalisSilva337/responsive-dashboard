@@ -1,6 +1,9 @@
 //função para mostrar o botao de voltar ao topo
 let voltarTopo = document.getElementById("voltarTopo");
-window.addEventListener("scroll", (event) => {
+let barraLateral = document.getElementById("barraLateral");
+let infosBarraLateral = document.getElementById("infosBarraLateral");
+let abrirBarra = document.getElementById("abrirBarra");
+window.addEventListener("scroll", () => {
   let scroll = this.scrollY;
 
   if (scroll >= 350) {
@@ -11,6 +14,14 @@ window.addEventListener("scroll", (event) => {
   } else {
     voltarTopo.style.display = "none";
   }
+});
+barraLateral.addEventListener("mouseenter", () => {
+  infosBarraLateral.classList.add("show");
+  abrirBarra.style.display = "none";
+});
+barraLateral.addEventListener("mouseleave", () => {
+  infosBarraLateral.classList.remove("show");
+  abrirBarra.style.display = "block";
 });
 
 let tabelaUsuarios = document.getElementById("tabelaUsuarios");

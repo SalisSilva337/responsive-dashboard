@@ -23,8 +23,14 @@
     <!-- Barra Lateral -->
     <aside
       class="bg-blue-950 text-white flex flex-col gap-14 relative items-center p-5 lg:float-left"
+      id="barraLateral"
     >
-      <div class="flex flex-col h-full sticky top-0 left-0">
+      <div class="sticky top-1/2 left-0" id="abrirBarra">
+        <h1 class="hidden lg:block animate-pulse text-3xl" id="setaLg">➡</h1>
+        <h1 class="block lg:hidden animate-pulse text-3xl" id="setaSm">⬇</h1>
+      </div>
+
+      <div class="hidden flex-col sticky top-0 left-0" id="infosBarraLateral">
         <div class="flex flex-col items-center gap-2 justify-center">
           <h1 class="text-2xl">NADZIEJA</h1>
           <!-- Perfil -->
@@ -58,7 +64,6 @@
         </div>
       </div>
     </aside>
-
     <!-- Seção Visão Geral -->
     <section
       class="flex flex-col flex-wrap p-1 justify-around gap-2 overflow-auto w-full"
@@ -127,7 +132,9 @@
         class="w-full flex flex-row lg:flex-row flex-wrap justify-around gap-4 shadow-xl p-2 rounded"
       >
         <!-- subDivisao nos dois graficos de barras -->
-        <section class="lg:w-1/3 w-full flex flex-col justify-around gap-2">
+        <section
+          class="lg:w-1/3 w-full h-full flex flex-col justify-around gap-2"
+        >
           <div class="bg-blue-950 rounded text-white p-1 w-full h-fit">
             <h1>Número de Sessões P/Dia</h1>
             <div class="bg-sky-700 rounded">
@@ -204,7 +211,7 @@
       <div class="bg-gray-900 text-white rounded p-2 flex">
         <h1>Sessões (Controle de Sessões):</h1>
       </div>
-      <section>
+      <section class="p-2 rounded" id="secaoSessoes">
         <div
           class="flex flex-col w-full h-64 bg-blue-950 overflow-auto p-1 rounded"
           id="controleSessoes"
