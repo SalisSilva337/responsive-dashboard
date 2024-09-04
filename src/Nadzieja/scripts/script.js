@@ -41,7 +41,7 @@ function buscarDadosApi() {
     },
   };
 
-  fetch("https://randomuser.me/api/?results=15&nat=br", options)
+  fetch("https://randomuser.me/api/?results=20&nat=br", options)
     .then((response) => response.json())
     .then((data) => {
       console.log(data.results);
@@ -59,7 +59,7 @@ function buscarDadosApi() {
 
         let tdData = document.createElement("td");
 
-        let dataRegistro = urlArray.registered.date.slice(0, 9);
+        let dataRegistro = urlArray.registered.date.slice(0, 10);
         tdData.textContent = dataRegistro;
         tr.appendChild(tdData);
         tabelaUsuarios.append(tr);
@@ -68,7 +68,8 @@ function buscarDadosApi() {
         inputPesquisa.addEventListener("input", () => {
           if (
             inputPesquisa.value == tdUsuarios.textContent ||
-            inputPesquisa.value + "@example.com" == tdEmail.textContent
+            inputPesquisa.value + "@example.com" == tdEmail.textContent ||
+            inputPesquisa.value == tdData.textContent
           ) {
             tr.style.backgroundColor = "#111827";
           } else {
