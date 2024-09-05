@@ -34,6 +34,8 @@ let controleSessoes = document.getElementById("controleSessoes");
 let iconeEditar = document.getElementById("iconeEditar");
 let modal = document.getElementById("modal");
 let modalConteudo = document.getElementById("modalConteudo");
+let imgUsuarioBarraLateral = document.getElementById("imgUsuarioBarraLateral");
+let nomeUsuario = document.getElementById("nomeUsuario");
 let contador = 0;
 window.onload = buscarDadosApi();
 
@@ -137,9 +139,12 @@ iconeEditar.onclick = () => {
   let inputFile = document.createElement("input");
   let imgArea = document.createElement("div");
   let imgArquivo = document.createElement("img");
-  let botaoSalvar = document.createElement("button");
 
+  let divBotao = document.createElement("div");
+  let botaoSalvar = document.createElement("button");
+  divBotao.appendChild(botaoSalvar);
   botaoSalvar.textContent = "Salvar Alterações";
+
   botaoSalvar.id = "botaoSalvar";
 
   inputFile.addEventListener("change", uploadImg);
@@ -149,6 +154,7 @@ iconeEditar.onclick = () => {
     imgArquivo.src = imgLink;
   }
 
+  inputFile.id = "inputFile";
   inputFile.type = "file";
   inputFile.accept = "image/*";
 
@@ -160,10 +166,16 @@ iconeEditar.onclick = () => {
   divImg.appendChild(imgArea);
   divImg.appendChild(inputFile);
   divUser.appendChild(inputModal);
+  divUser.appendChild(divBotao);
 
   modalConteudo.appendChild(divImg);
   modalConteudo.appendChild(divUser);
-  modalConteudo.appendChild(botaoEnviar);
+
+  botaoSalvar.addEventListener("click", () => {
+    imgUsuarioBarraLateral.src = imgArquivo.src;
+    nomeUsuario.textContent = inputModal.value;
+    modal.style.display = "none";
+  });
 
   modal.style.display = "flex";
 };
