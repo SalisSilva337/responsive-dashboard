@@ -687,6 +687,10 @@ video {
   width: auto;
 }
 
+.w-56 {
+  width: 14rem;
+}
+
 @keyframes bounce {
   0%, 100% {
     transform: translateY(-25%);
@@ -733,6 +737,10 @@ video {
   justify-content: center;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
 .justify-around {
   justify-content: space-around;
 }
@@ -751,6 +759,10 @@ video {
 
 .gap-4 {
   gap: 1rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
 }
 
 .overflow-auto {
@@ -1171,6 +1183,15 @@ body {
 
   .lg\:w-auto {
     width: auto;
+  }
+
+  .lg\:w-52 {
+    width: 13rem;
+  }
+
+  .lg\:w-fit {
+    width: -moz-fit-content;
+    width: fit-content;
   }
 
   .lg\:flex-row {

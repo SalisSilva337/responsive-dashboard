@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NADZIEJA</title>
     <link href="./styles/output.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="../imgs/iconePag.png" type="image/x-icon" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="scripts/script.js" defer></script>
     <script src="scripts/barChart.js" defer></script>
@@ -35,8 +36,12 @@
       id="barraLateral"
     >
       <div class="sticky top-1/2 left-0" id="abrirBarra">
-        <h1 class="hidden lg:block animate-pulse text-3xl" id="setaLg">➡</h1>
-        <h1 class="block lg:hidden animate-pulse text-3xl" id="setaSm">⬇</h1>
+        <h1 class="hidden lg:block animate-pulse text-3xl" id="setaLg">
+          <img src="../imgs/setaDireita.png" alt="" />
+        </h1>
+        <h1 class="block lg:hidden animate-pulse text-3xl" id="setaSm">
+          <img src="../imgs/setaBaixo.png" alt="" />
+        </h1>
       </div>
 
       <div class="hidden flex-col sticky top-0 left-0" id="infosBarraLateral">
@@ -98,9 +103,12 @@
             class="bg-blue-950 text-white p-5 rounded flex w-full lg:w-56 items-center justify-center text-center"
             id="card"
           >
-            <div>
-              <h1 class="text-lg">50.000 ativos</h1>
-              <h1 class="text-sm font-bold">Média de Usuários P/Mês</h1>
+            <div class="flex items-center gap-5">
+              <img src="../imgs/calendarioPadrao.png" alt="" />
+              <div>
+                <h1 class="text-lg">50k ativos</h1>
+                <h1 class="text-sm font-bold">Média de Usuários P/Mês</h1>
+              </div>
             </div>
           </div>
         </div>
@@ -110,9 +118,12 @@
             class="bg-blue-950 text-white p-5 rounded flex w-full lg:w-56 items-center justify-center text-center"
             id="card"
           >
-            <div>
-              <h1 class="text-lg">Abril/2024</h1>
-              <h1 class="text-sm font-bold">Maior Pico de Usuários</h1>
+            <div class="flex items-center gap-5">
+              <img src="../imgs/calendarioMes.png" alt="" />
+              <div>
+                <h1 class="text-lg">Abril/2024</h1>
+                <h1 class="text-sm font-bold">Maior Pico de Usuários</h1>
+              </div>
             </div>
           </div>
         </div>
@@ -122,9 +133,12 @@
             class="bg-blue-950 text-white p-5 rounded flex w-full lg:w-56 items-center justify-center text-center"
             id="card"
           >
-            <div>
-              <h1 class="text-lg">1.200 sessões</h1>
-              <h1 class="text-sm font-bold">Média de Sessões P/Dia</h1>
+            <div class="flex items-center gap-5">
+              <img src="../imgs/sol.png" alt="" />
+              <div>
+                <h1 class="text-lg">1.2k</h1>
+                <h1 class="text-sm font-bold">Média de Sessões P/Dia</h1>
+              </div>
             </div>
           </div>
         </div>
@@ -134,9 +148,12 @@
             class="bg-blue-950 text-white p-5 rounded flex w-full lg:w-56 items-center justify-center text-center"
             id="card"
           >
-            <div>
-              <h1 class="text-lg">Domingo</h1>
-              <h1 class="text-sm font-bold">Maior Pico de Sessões</h1>
+            <div class="flex items-center gap-5">
+              <img src="../imgs/calendarioDia.png" alt="" />
+              <div>
+                <h1 class="text-lg">Domingo</h1>
+                <h1 class="text-sm font-bold">Maior Pico de Sessões</h1>
+              </div>
             </div>
           </div>
         </div>
