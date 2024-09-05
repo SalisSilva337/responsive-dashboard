@@ -1120,4 +1120,6 @@ body {
   }
 
   .lg\:flex-row {
-    flex-direc
+    flex-direction: row;
+  }
+}
