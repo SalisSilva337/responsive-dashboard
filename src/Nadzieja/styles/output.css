@@ -663,6 +663,10 @@ video {
   height: auto;
 }
 
+.h-3\/5 {
+  height: 60%;
+}
+
 .w-1\/2 {
   width: 50%;
 }
