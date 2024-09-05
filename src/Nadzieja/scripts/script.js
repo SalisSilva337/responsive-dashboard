@@ -3,6 +3,7 @@ let voltarTopo = document.getElementById("voltarTopo");
 let barraLateral = document.getElementById("barraLateral");
 let infosBarraLateral = document.getElementById("infosBarraLateral");
 let abrirBarra = document.getElementById("abrirBarra");
+
 window.addEventListener("scroll", () => {
   let scroll = this.scrollY;
 
@@ -30,6 +31,9 @@ let iconePesquisa = document.getElementById("iconePesquisa");
 let iconeDica = document.getElementById("iconeDica");
 let dica = document.getElementById("dica");
 let controleSessoes = document.getElementById("controleSessoes");
+let iconeEditar = document.getElementById("iconeEditar");
+let modal = document.getElementById("modal");
+let modalConteudo = document.getElementById("modalConteudo");
 let contador = 0;
 window.onload = buscarDadosApi();
 
@@ -99,7 +103,6 @@ function buscarDadosApi() {
         }
 
         controleSessoes.appendChild(cadaSessao);
-        console.log(contador);
       }, 1500);
     })
     .catch((err) => console.error(err));
@@ -108,3 +111,59 @@ function buscarDadosApi() {
     dica.classList.toggle("show");
   });
 }
+
+window.onclick = (event) => {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+iconeEditar.onclick = () => {
+  modalConteudo.innerHTML = "";
+  let divImg = document.createElement("div");
+  let divUser = document.createElement("div");
+
+  divImg.id = "divImg";
+  divUser.id = "divUser";
+
+  let imgH1 = document.createElement("h1");
+  let userH1 = document.createElement("h1");
+  imgH1.textContent = "Imagem de Perfil:";
+  userH1.textContent = "Nome de Usuário:";
+  divImg.appendChild(imgH1);
+  divUser.appendChild(userH1);
+
+  let inputModal = document.createElement("input");
+
+  let inputFile = document.createElement("input");
+  let imgArea = document.createElement("div");
+  let imgArquivo = document.createElement("img");
+  let botaoSalvar = document.createElement("button");
+
+  botaoSalvar.textContent = "Salvar Alterações";
+  botaoSalvar.id = "botaoSalvar";
+
+  inputFile.addEventListener("change", uploadImg);
+
+  function uploadImg() {
+    let imgLink = URL.createObjectURL(inputFile.files[0]);
+    imgArquivo.src = imgLink;
+  }
+
+  inputFile.type = "file";
+  inputFile.accept = "image/*";
+
+  inputModal.id = "inputModal";
+  imgArea.id = "imgArea";
+  imgArquivo.id = "imgArquivo";
+
+  imgArea.appendChild(imgArquivo);
+  divImg.appendChild(imgArea);
+  divImg.appendChild(inputFile);
+  divUser.appendChild(inputModal);
+
+  modalConteudo.appendChild(divImg);
+  modalConteudo.appendChild(divUser);
+  modalConteudo.appendChild(botaoEnviar);
+
+  modal.style.display = "flex";
+};
