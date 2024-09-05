@@ -14,6 +14,19 @@
   </head>
   <body class="flex flex-col lg:flex-row">
     <div
+      id="modalCarregarApi"
+      class="bg-black bg-opacity-70 backdrop-blur-sm top-0 left-0 w-full h-full fixed z-20 justify-center items-center flex flex-col lg:flex-row"
+    >
+      <div
+        id="modalConteudoCarregarApi"
+        class="bg-blue-950 h-1/2 w-auto rounded-lg text-white flex p-3 flex-wrap items-center justify-center flex-col gap-5"
+      >
+        <img src="../imgs/loading.svg" alt="" class="w-1/2 h-1/2" />
+        <h1 class="text-xl">CARREGANDO API DE USUÁRIOS ALEATORIOS...</h1>
+      </div>
+    </div>
+
+    <div
       id="modal"
       class="bg-black bg-opacity-70 backdrop-blur-sm top-0 left-0 w-full h-full fixed z-20 justify-center items-center hidden flex-col lg:flex-row"
     >
@@ -178,13 +191,19 @@
         <section
           class="lg:w-1/3 w-full h-full flex flex-col justify-around gap-2"
         >
-          <div class="bg-blue-950 rounded text-white p-1 w-full h-fit">
+          <div
+            class="bg-blue-950 rounded text-white p-1 w-full h-fit"
+            id="grafico"
+          >
             <h1>Número de Sessões P/Dia</h1>
             <div class="bg-sky-700 rounded">
               <canvas id="barChart" class=""></canvas>
             </div>
           </div>
-          <div class="bg-blue-950 rounded text-white p-1 w-full h-fit">
+          <div
+            class="bg-blue-950 rounded text-white p-1 w-full h-fit"
+            id="grafico"
+          >
             <h1>Número de Usuários Ativos P/Mês</h1>
             <div class="bg-sky-700 rounded">
               <canvas id="barChart3" class=""></canvas>
@@ -193,6 +212,7 @@
         </section>
         <div
           class="bg-blue-950 rounded text-white p-1 w-full lg:w-1/3 h-fit lg:mt-5"
+          id="grafico"
         >
           <h1>Nº de Dias de Manutenção da Dashboard</h1>
           <div class="bg-sky-700 rounded">
@@ -230,7 +250,7 @@
               id="dica"
             >
               <h2>
-                a pesquisa pode ser feita pelo nome ou email (não necessita
+                a pesquisa pode ser feita ou pelo nome ou email (não necessita
                 colocar "@example.com") ou data de reg.
               </h2>
             </div>

@@ -671,6 +671,10 @@ video {
   width: 100%;
 }
 
+.w-1\/2 {
+  width: 50%;
+}
+
 @keyframes bounce {
   0%, 100% {
     transform: translateY(-25%);
@@ -917,16 +921,32 @@ body {
   box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.4);
 }
 
+#card {
+  box-shadow: 0px 0px 5px black;
+}
+
 #secaoGraficos {
   box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.4);
+}
+
+#grafico {
+  box-shadow: 0px 0px 5px black;
 }
 
 #secaoUsuarios {
   box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.4);
 }
 
+#tabelaUsuarios {
+  box-shadow: 0px 0px 5px black;
+}
+
 #secaoSessoes {
   box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.4);
+}
+
+#controleSessoes {
+  box-shadow: 0px 0px 5px black;
 }
 
 #secaoDesempenho {
@@ -960,10 +980,6 @@ body {
 
 #voltarTopo {
   box-shadow: 0px 0px 3px black;
-}
-
-#card {
-  box-shadow: 0px 0px 5px black;
 }
 
 .show {

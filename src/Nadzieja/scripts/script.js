@@ -36,6 +36,8 @@ let modal = document.getElementById("modal");
 let modalConteudo = document.getElementById("modalConteudo");
 let imgUsuarioBarraLateral = document.getElementById("imgUsuarioBarraLateral");
 let nomeUsuario = document.getElementById("nomeUsuario");
+
+let modalCarregarApi = document.getElementById("modalCarregarApi");
 let contador = 0;
 window.onload = buscarDadosApi();
 
@@ -50,7 +52,7 @@ function buscarDadosApi() {
   fetch("https://randomuser.me/api/?results=20&nat=br", options)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data.results);
+      modalCarregarApi.style.display = "none";
       for (let index = 0; index < data.results.length; index++) {
         let urlArray = data.results[index];
         let tr = document.createElement("tr");
