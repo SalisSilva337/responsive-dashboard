@@ -139,18 +139,24 @@ iconeEditar.onclick = () => {
   let inputFile = document.createElement("input");
   let imgArea = document.createElement("div");
   let imgArquivo = document.createElement("img");
+  let spanComplete = document.createElement("span");
+  spanComplete.hidden = true;
 
   let divBotao = document.createElement("div");
   let botaoSalvar = document.createElement("button");
-  divBotao.appendChild(botaoSalvar);
+  divBotao.id = "divBotao";
   botaoSalvar.textContent = "Salvar Alterações";
 
   botaoSalvar.id = "botaoSalvar";
+
+  divBotao.appendChild(spanComplete);
+  divBotao.appendChild(botaoSalvar);
 
   inputFile.addEventListener("change", uploadImg);
 
   function uploadImg() {
     let imgLink = URL.createObjectURL(inputFile.files[0]);
+    console.log(imgLink);
     imgArquivo.src = imgLink;
   }
 
@@ -172,9 +178,29 @@ iconeEditar.onclick = () => {
   modalConteudo.appendChild(divUser);
 
   botaoSalvar.addEventListener("click", () => {
-    imgUsuarioBarraLateral.src = imgArquivo.src;
-    nomeUsuario.textContent = inputModal.value;
-    modal.style.display = "none";
+    if (inputModal.value == "" && imgArquivo.src == "") {
+      spanComplete.hidden = false;
+      spanComplete.textContent = "Digite algo no input e adicione uma imagem";
+      setTimeout(() => {
+        spanComplete.hidden = true;
+      }, 2000);
+    } else if (inputModal.value == "") {
+      spanComplete.hidden = false;
+      spanComplete.textContent = "Digite algo no input";
+      setTimeout(() => {
+        spanComplete.hidden = true;
+      }, 2000);
+    } else if (imgArquivo.src == "") {
+      spanComplete.hidden = false;
+      spanComplete.textContent = "Adicione uma imagem";
+      setTimeout(() => {
+        spanComplete.hidden = true;
+      }, 2000);
+    } else {
+      imgUsuarioBarraLateral.src = imgArquivo.src;
+      nomeUsuario.textContent = inputModal.value;
+      modal.style.display = "none";
+    }
   });
 
   modal.style.display = "flex";

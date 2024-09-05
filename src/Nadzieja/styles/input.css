@@ -137,6 +137,14 @@ body {
   gap: 10%;
 }
 
+#divBotao {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 150px;
+  text-align: center;
+}
+
 #inputModal {
   width: 90%;
   border-radius: 10px;

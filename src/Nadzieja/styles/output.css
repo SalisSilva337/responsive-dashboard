@@ -655,22 +655,6 @@ video {
   height: 100%;
 }
 
-.h-96 {
-  height: 24rem;
-}
-
-.h-auto {
-  height: auto;
-}
-
-.h-3\/5 {
-  height: 60%;
-}
-
-.w-1\/2 {
-  width: 50%;
-}
-
 .w-10 {
   width: 2.5rem;
 }
@@ -679,16 +663,12 @@ video {
   width: 7rem;
 }
 
-.w-full {
-  width: 100%;
-}
-
 .w-auto {
   width: auto;
 }
 
-.w-56 {
-  width: 14rem;
+.w-full {
+  width: 100%;
 }
 
 @keyframes bounce {
@@ -735,10 +715,6 @@ video {
 
 .justify-center {
   justify-content: center;
-}
-
-.justify-between {
-  justify-content: space-between;
 }
 
 .justify-around {
@@ -1060,6 +1036,14 @@ body {
   gap: 10%;
 }
 
+#divBotao {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 150px;
+  text-align: center;
+}
+
 #inputModal {
   width: 90%;
   border-radius: 10px;
@@ -1137,6 +1121,14 @@ body {
   cursor: pointer;
 }
 
+.hover\:rounded-xl:hover {
+  border-radius: 0.75rem;
+}
+
+.hover\:border:hover {
+  border-width: 1px;
+}
+
 .hover\:text-sky-600:hover {
   --tw-text-opacity: 1;
   color: rgb(2 132 199 / var(--tw-text-opacity));
@@ -1183,15 +1175,6 @@ body {
 
   .lg\:w-auto {
     width: auto;
-  }
-
-  .lg\:w-52 {
-    width: 13rem;
-  }
-
-  .lg\:w-fit {
-    width: -moz-fit-content;
-    width: fit-content;
   }
 
   .lg\:flex-row {
